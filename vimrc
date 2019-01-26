@@ -58,7 +58,6 @@ map <SPACE> <leader>
 cmap w!! w !sudo tee % >/dev/null
 
 set t_Co=256
-colorscheme colorful256
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -96,6 +95,8 @@ let g:NERDAltDelims_haskell = 1
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
+highlight Search guibg='Purple' guifg='NONE'
+
 if has("gui_running")
   imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
 else " no gui
@@ -104,8 +105,8 @@ else " no gui
   endif
 endif
 
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+"let g:haskellmode_completion_ghc = 1
+"autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 map <Leader>n :NERDTreeToggle<CR>
 

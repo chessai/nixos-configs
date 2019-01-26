@@ -7,24 +7,25 @@ let
 
     vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
       start = [
-        vim-colorschemes
+        #vim-colorschemes
         rainbow_parentheses
-        syntastic
-        vimproc
-        ctrlp
-        neocomplete
-        The_NERD_Commenter
-        The_NERD_tree
-        supertab
-        tabular
-        tlib
-        vim-addon-mw-utils
-        vim-repeat
-        snipmate
-        surround
-        neco-ghc
+        #syntastic
+        #vimproc
+        #ctrlp
+        #neocomplete
+        #The_NERD_Commenter
+        #The_NERD_tree
+        #supertab
+        #tabular
+        #tlib
+        #vim-addon-mw-utils
+        #vim-repeat
+        #snipmate
+        #surround
+        #neco-ghc
         vim-nix
-        fugitive
+        #fugitive
+        #vim-stylish-haskell
       ];
 
     };
