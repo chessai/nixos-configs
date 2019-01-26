@@ -1,2 +1,4 @@
 keys.nix
 hardware-configuration.nix
+snmpd.nix
+result*
