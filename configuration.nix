@@ -21,6 +21,7 @@ in {
       ./time.nix
       ./zfs.nix
       ./system-packages.nix
+      ./hoogle.nix 
       #./caches.nix
       #./docker.nix
       #./xmonad.nix
