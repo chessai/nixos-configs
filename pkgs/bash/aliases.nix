@@ -6,7 +6,7 @@
     alias gc='git clone'
     alias gs='git status'
     alias git-initial-commit='git commit -m "Creō ā nihilō"'
-
+    
     ### HASKELL 
     alias drep='ghcid -c "cabal new-repl"'
     alias nrep='nix-shell --run "ghcid -c cabal new-repl"'
@@ -18,6 +18,7 @@
 
     ### CD
     alias dev='cd ~/development' 
+    alias grove='cd ~/development/grove' 
     alias .0='cd .' 
     alias .1='cd ..'
     alias .2='cd ../..'
@@ -46,11 +47,6 @@
     #alias nowtime='now'
     #alias nowdate='date +"%d-%m-%Y"'
 
-    ### VIM
-    alias vi='vim'
-    alias svi='sudo vim'
-    alias edit='vim'
-
     ### PORTS
     alias ports='netstat -tulanp'
 
@@ -78,9 +74,11 @@
 
     ### SUMMONER
     alias summon='~/.local/bin/summon'
+    alias grab='~/.local/bin/grab'
 
     ### MISC
     alias ax='chmod a+x'
+    alias gp='sudo openconnect --protocol=gp sentinela.layer3com.com'
 
     ### extraction
     function extract {

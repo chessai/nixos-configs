@@ -1,4 +1,4 @@
-{config,pkgs,...}:
+{ config,pkgs,... }:
 
 let
   myVim = pkgs.vim_configurable.customize {
@@ -39,5 +39,8 @@ in
       vi = "vim";
       svim = "sudoedit";
     };
-    nixpkgs.config.vim.ftNix = false;
+    nixpkgs.config.vim = {
+      ftNixSupport = true;
+      pythonSupport = true;
+    };
   }
