@@ -7,7 +7,7 @@ with lib;
   # https://nixos.wiki/wiki/Mosh
   system.activationScripts.systemd = stringAfter["groups"]
     ''
-       loginctl enable-linger yeahnah
+       #loginctl enable-linger yeahnah
     '';
 
   environment.systemPackages = [ pkgs.mosh ];
