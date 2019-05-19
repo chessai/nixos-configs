@@ -10,6 +10,9 @@
     ### HASKELL 
     alias drep='ghcid -c "cabal new-repl"'
     alias nrep='nix-shell --run "ghcid -c cabal new-repl"'
+    alias ghc844='nix-shell -p haskell.compiler.ghc844'
+    alias ghc863='nix-shell -p haskell.compiler.ghc863'
+    alias ghc864='nix-shell -p haskell.compiler.ghc864'
 
     ### LS 
     alias ls='ls --color=auto'
@@ -79,6 +82,9 @@
     ### MISC
     alias ax='chmod a+x'
     alias gp='sudo openconnect --protocol=gp sentinela.layer3com.com'
+    alias unused='~/.local/bin/unused'
+    alias knuckles='~/.local/bin/knuckles'
+    eval $(thefuck --alias)
 
     ### extraction
     function extract {
@@ -112,6 +118,9 @@
         fi
      fi
     }
+
+  ### use vi keybindings for commandline
+  set -o vi
   '';
 
   # needed for 'extract' 
