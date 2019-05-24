@@ -115,8 +115,8 @@ let
           " This is so sad, Vim play Despacito
           iabbrev Despacito <Esc>:!xdg-open https://youtu.be/kJQP7kiw5Fk?t=83<CR>
 
-          " Remove all trailing whitespace
-          nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+          " Strip trailing whitespace for the certain filetypes
+          autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal %s/\s\+$//e
         '';
       vam.pluginDictionaries = [
         { names = [
@@ -133,7 +133,7 @@ in
 {
   config = {
     environment = {
-      systemPackages = [ myVim ];
+      systemPackages = [ myVim pkgs.nix-prefetch-git ];
       shellAliases.vi = "vim";
       variables.EDITOR = "vim";
     };
