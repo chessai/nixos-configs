@@ -2,27 +2,27 @@
 
 {
   environment.interactiveShellInit = ''
-    ### GIT 
+    ### GIT
     alias gc='git clone'
     alias gs='git status'
     alias git-initial-commit='git commit -m "Creō ā nihilō"'
-    
-    ### HASKELL 
+
+    ### HASKELL
     alias drep='ghcid -c "cabal new-repl"'
     alias nrep='nix-shell --run "ghcid -c cabal new-repl"'
     alias ghc844='nix-shell -p haskell.compiler.ghc844'
-    alias ghc863='nix-shell -p haskell.compiler.ghc863'
     alias ghc864='nix-shell -p haskell.compiler.ghc864'
+    alias ghc865='nix-shell -p haskell.compiler.ghc865'
 
-    ### LS 
+    ### LS
     alias ls='ls --color=auto'
     alias ll='ls -la --color=auto'
     alias l.='ls -d .* --color=auto'
 
     ### CD
-    alias dev='cd ~/development' 
-    alias grove='cd ~/development/grove' 
-    alias .0='cd .' 
+    alias dev='cd ~/development'
+    alias grove='cd ~/development/grove'
+    alias .0='cd .'
     alias .1='cd ..'
     alias .2='cd ../..'
     alias .3='cd ../../..'
@@ -33,7 +33,7 @@
     alias .8='cd ../../../../../../../..'
     alias .9='cd ../../../../../../../../..'
     alias .10='cd ../../../../../../../../..'
-    
+
     ### GREP
     #alias grep='grep --color=auto'
     #alias egrep='egrep --color=auto'
@@ -53,9 +53,9 @@
     ### PORTS
     alias ports='netstat -tulanp'
 
-    ### SYSTEM PERFORMANCE 
+    ### SYSTEM PERFORMANCE
     alias meminfo='free -m -l -t'
-    
+
     # get top process or top 10 processes eating memory
     alias psmem='ps auxf | sort -nr -k 4'
     alias psmem10='ps auxf | sort -nr -k 4 | head -10'
@@ -123,7 +123,7 @@
   set -o vi
   '';
 
-  # needed for 'extract' 
+  # needed for 'extract'
   environment.systemPackages = with pkgs; [
     p7zip
     cabextract
