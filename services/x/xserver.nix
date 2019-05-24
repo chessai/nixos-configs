@@ -1,12 +1,14 @@
 {
   services.xserver = {
     enable = true;
+    autorun = false; 
     layout = "us";
-    #xkbOptions = "escape:swapcaps"; # "eurosign:e";
+    desktopManager.default = "none";
+    desktopManager.xterm.enable = false;
+    displayManager.lightdm.enable = true;
+    windowManager.i3.enable = true;
    
     # Enable touchpad support.
     libinput.enable = true;
-
-    desktopManager.xfce.enable = true;
   };
 }
