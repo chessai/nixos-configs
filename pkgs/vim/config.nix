@@ -116,7 +116,7 @@ let
           iabbrev Despacito <Esc>:!xdg-open https://youtu.be/kJQP7kiw5Fk?t=83<CR>
 
           " Strip trailing whitespace for the certain filetypes
-          autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal %s/\s\+$//e
+          autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal,*.nix %s/\s\+$//e
         '';
       vam.pluginDictionaries = [
         { names = [
