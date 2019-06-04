@@ -28,6 +28,9 @@ let
           filetype indent on
           filetype plugin on
 
+          autocmd BufEnter *.hsc :setlocal filetype=hs        " set hsc=hs
+          autocmd BufEnter *.chs :setlocal filetype=hs        " set hsc=hs
+
           set swapfile
           set backup
           set writebackup
@@ -62,7 +65,7 @@ let
 
           set noerrorbells
           set visualbell t_vb=
-          
+
           set mouse-=a
 
           set number relativenumber
@@ -117,12 +120,17 @@ let
 
           " Strip trailing whitespace for the certain filetypes
           autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal,*.nix %s/\s\+$//e
+
+          " Jump to identifiers/definitions with ctags
+          nnoremap goto :CtrlPTag<cr>
         '';
       vam.pluginDictionaries = [
         { names = [
             "vim-nix"
             "airline"
             "rainbow_parentheses"
+            "ctrlp-vim"
+            "youcompleteme"
           ];
         }
       ];
@@ -139,7 +147,7 @@ in
     };
     programs.bash.shellAliases = {
       vi = "vim";
-      svim = "sudoedit";   
+      svim = "sudoedit";
     };
     nixpkgs.config.vim = {
       ftNixSupport = true;
