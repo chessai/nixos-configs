@@ -7,8 +7,8 @@ let
   roteraSrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "rotera";
-    rev = "b00148475fe0312046c1e892d6bebfe3c022fbda";
-    sha256 = "0nq0p69gmxqxh3icxxs3h6iganfa3q42xafvd9i45d543jdd85qs";
+    rev = "55c655a0ace69572383176d66889649f6e4566e2";
+    sha256 = "16nrzkk89prd96d3203vkxjgf7iiac7c5xf7wcva25j67aq1zwcn";
   };
 in {
   options = {
@@ -44,17 +44,20 @@ in {
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
       (super: self: {
-        rotera = pkgs.callPackage (_: roteraSrc) {};
+        rotera = self.callPackage roteraSrc {};
       })
     ];
     users.users.rotera = {
       name = "rotera";
+      group = "rotera";
       description = "Rotera server user";
       home = "${cfg.dataDir}";
       isSystemUser = true;
       createHome = true;
       useDefaultShell = true;
     };
+
+    users.groups.rotera.gid = null; # picked upon activation
 
     systemd.services.rotera = {
       description = "Rotera Server";
@@ -65,26 +68,27 @@ in {
 
       preStart = ''
         # Create data directory
-        if ! test -e ${cfg.dataDir}; then
+        if test ! -d ${cfg.dataDir}; then
           mkdir -m 0700 -p ${cfg.dataDir}
+        else
           rm -f ${cfg.dataDir}/*.rot
-          chown -R rotera:rotera ${cfg.dataDir}
         fi
 
         # Create .rot files
-        ${foldl (_: r: ''
-          '${pkgs.coreUtils}/touch' '${r}.rot'
-        '') "" cfg.rotFiles}
+        ${concatMapStrings (r: ''
+          '${pkgs.coreutils}/bin/touch' '${builtins.toString r}'.rot
+        '') cfg.rotFiles}
+        chown -R rotera:rotera ${cfg.dataDir}
       '';
 
       script = ''
-        ls ${pkgs.rotera}
         exec ${pkgs.rotera}/bin/rotera-server
       '';
 
       serviceConfig = {
         ExecReload = "${pkgs.coreutils}/bin/kill -HUP $MAINPID";
         User = "rotera";
+        Group = "rotera";
         PermissionsStartOnly = true;
 
         WorkingDirectory = config.users.users.rotera.home;
