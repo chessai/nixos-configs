@@ -78,6 +78,8 @@ in {
         ${concatMapStrings (r: ''
           '${pkgs.coreutils}/bin/touch' '${builtins.toString r}'.rot
         '') cfg.rotFiles}
+
+        # make sure that rotera can access dataDir
         chown -R rotera:rotera ${cfg.dataDir}
       '';
 
