@@ -7,8 +7,8 @@ let
   roteraSrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "rotera";
-    rev = "55c655a0ace69572383176d66889649f6e4566e2";
-    sha256 = "16nrzkk89prd96d3203vkxjgf7iiac7c5xf7wcva25j67aq1zwcn";
+    rev = "386874a8a1052b1e9fd223bd1bc79070684f0241";
+    sha256 = "1q2dz9xvly1x5xspjr5pwg8wshdmgv7ra5ddw4irvfxfh6b1v1sd";
   };
 in {
   options = {
@@ -76,7 +76,7 @@ in {
 
         # Create .rot files
         ${concatMapStrings (r: ''
-          '${pkgs.coreutils}/bin/touch' '${builtins.toString r}'.rot
+          '${pkgs.rotera}/bin/rotera' create -r '${builtins.toString r}'.rot
         '') cfg.rotFiles}
 
         # make sure that rotera can access dataDir
