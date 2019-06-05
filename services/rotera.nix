@@ -22,20 +22,44 @@ in {
         '';
       };
 
-      rotFiles = mkOption {
-        type = types.listOf types.int;
-        default = [ ];
-        description = ''
-          Run rotera with these .rot files;
-          The files will be created by nix, and placed into ${dataDir}.
-        '';
-      };
-
       dataDir = mkOption {
         type = types.path;
         default = "/var/lib/rotera";
         description = ''
           Where rotera should look for its .rot files.
+        '';
+      };
+
+      rotFiles = mkOption {
+        type = types.listOf types.int;
+        default = [ ];
+        description = ''
+          Run rotera with these .rot files;
+          The files will be created by nix, and placed into ${cfg.dataDir}.
+        '';
+      };
+
+      dataSectionSize = mkOption {
+        type = types.int;
+        default = 1024 * 1024;
+        description = ''
+          Size of data section in bytes.
+        '';
+      };
+
+      entries = mkOption {
+        type = types.int;
+        default = 1024;
+        description = ''
+          Maximum number of events to preserve.
+        '';
+      };
+
+      expirations = mkOption {
+        type = types.int;
+        default = 64;
+        description = ''
+          Batch size of expiration.
         '';
       };
     };
@@ -76,7 +100,7 @@ in {
 
         # Create .rot files
         ${concatMapStrings (r: ''
-          '${pkgs.rotera}/bin/rotera' create -r '${builtins.toString r}'.rot
+          '${pkgs.rotera}/bin/rotera' create -s '${builtins.toString cfg.dataSectionSize}' -e '${builtins.toString cfg.entries}' -x '${builtins.toString cfg.expirations}' -r '${builtins.toString r}'.rot
         '') cfg.rotFiles}
 
         # make sure that rotera can access dataDir
