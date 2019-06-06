@@ -29,6 +29,7 @@
     rotera = {
       enable = true;
       rotFiles = [ 3 13 4 ];
+      clear = true;
     };
   };
 }

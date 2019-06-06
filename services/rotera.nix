@@ -7,8 +7,8 @@ let
   roteraSrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "rotera";
-    rev = "386874a8a1052b1e9fd223bd1bc79070684f0241";
-    sha256 = "1q2dz9xvly1x5xspjr5pwg8wshdmgv7ra5ddw4irvfxfh6b1v1sd";
+    rev = "93ea6c83dba431c5232afa7c24c9a1757a069cb7";
+    sha256 = "1kc0x17gj65n4rwj8q8c8brba1vywlq7h61jh9rhfpnzi0gh6xm7";
   };
 in {
   options = {
@@ -62,6 +62,14 @@ in {
           Batch size of expiration.
         '';
       };
+
+      clear = mkOption {
+        type = types.bool;
+        default = false;
+        description = ''
+          Whether or not to delete all .rot data upon service start.
+        '';
+      };
     };
   };
 
@@ -94,9 +102,10 @@ in {
         # Create data directory
         if test ! -d ${cfg.dataDir}; then
           mkdir -m 0700 -p ${cfg.dataDir}
-        else
-          rm -f ${cfg.dataDir}/*.rot
         fi
+
+        # Clear out .rot files, if so desired.
+        ${if cfg.clear then ''rm -f ${cfg.dataDir}/*.rot'' else '' ''}
 
         # Create .rot files
         ${concatMapStrings (r: ''
