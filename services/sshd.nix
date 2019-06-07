@@ -66,7 +66,7 @@
       User noc
       ProxyJump ansible-server
     Host new-lab
-      HostName 10.10.10.233
+      HostName 10.10.10.234
       User allsight
   '';
 }
