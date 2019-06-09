@@ -3,6 +3,6 @@
 {
   services.locate = {
     enable = true;
-    interval = "00 12 * * *";
+    interval = "hourly";
   };
 }
