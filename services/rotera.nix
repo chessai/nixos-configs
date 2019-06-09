@@ -70,6 +70,14 @@ in {
           Whether or not to delete all .rot data upon service start.
         '';
       };
+
+      port = mkOption {
+        type = types.port;
+        default = 8245;
+        description = ''
+          The port on which rotera-server will listen.
+        '';
+      };
     };
   };
 
