@@ -11,13 +11,7 @@ function! Nix_Prefetch_Git(owner, repo, ...)
         let command .= ' --rev ' . a:1
     end
     let command .= ' --quiet 2>/dev/null | grep -E "' . join(fields, '|') . '" | sed -E "s/\s*\"(.+)\": \"(.+)\",/\1 = \"\2\";/g"'
-    if $USER ==# 'root'
-        " If root, try to run command as login user instead
-        let logname = substitute(system('logname'), '\n', '', 'ge')
-        execute('read! ' . 'runuser -l ' . logname . " -c '" . command . "'")
-    else
-        execute('read! ' . command)
-    endif
+    execute('read! ' . command)
 endfunction
 
 syntax on
