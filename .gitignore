@@ -2,3 +2,5 @@ keys.nix
 hardware-configuration.nix
 snmpd.nix
 result*
+secrets.nix
+secret*
