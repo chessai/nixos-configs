@@ -7,8 +7,8 @@ let
   roteraSrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "rotera";
-    rev = "93ea6c83dba431c5232afa7c24c9a1757a069cb7";
-    sha256 = "1kc0x17gj65n4rwj8q8c8brba1vywlq7h61jh9rhfpnzi0gh6xm7";
+    rev = "b881b7cd81b2c4381b1c640bf94c37db5cf7d2ae";
+    sha256 = "0mgf8pi2zrnrlc7al77mh9jk5qwmnbcarx0iwdbkdn5bn6wa8kqn";
   };
 in {
   options = {
@@ -125,7 +125,7 @@ in {
       '';
 
       script = ''
-        exec ${pkgs.rotera}/bin/rotera-server
+        exec ${pkgs.rotera}/bin/rotera-server --port ${builtins.toString cfg.port}
       '';
 
       serviceConfig = {
