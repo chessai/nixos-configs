@@ -5,10 +5,10 @@ with lib;
 let
   cfg = config.services.rotera;
   roteraSrc = pkgs.fetchFromGitHub {
-    owner = "chessai";
+    owner = "andrewthad";
     repo = "rotera";
-    rev = "b881b7cd81b2c4381b1c640bf94c37db5cf7d2ae";
-    sha256 = "0mgf8pi2zrnrlc7al77mh9jk5qwmnbcarx0iwdbkdn5bn6wa8kqn";
+    rev = "4384a4a882a4c566d69913bc17a27630e24758a8";
+    sha256 = "14kzqgrq2hydijnw4175kq2vqwix1d7mmsnp5dndliww5la1j3sv";
   };
 in {
   options = {
@@ -129,15 +129,12 @@ in {
       '';
 
       serviceConfig = {
-        ExecReload = "${pkgs.coreutils}/bin/kill -HUP $MAINPID";
+        ExecReload = "${pkgs.coreutils}/bin/kill -INT $MAINPID";
         User = "rotera";
         Group = "rotera";
         PermissionsStartOnly = true;
 
         WorkingDirectory = config.users.users.rotera.home;
-
-        KillSignal = "SIGINT";
-        KillMode = "mixed";
 
         TimeoutSec = 120;
       };
