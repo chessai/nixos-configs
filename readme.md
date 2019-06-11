@@ -13,3 +13,6 @@ reproducibleas possible.
 * pkgs/       : mainly vim, system packages
 * services/   : all my systemd services (e.g. docker, hoogle, postgres, sshd, etc.)
 * users/      : system users
+
+## things missing:
+* i3 configuration
