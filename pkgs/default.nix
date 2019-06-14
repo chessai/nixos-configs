@@ -5,6 +5,7 @@
     ./bash/config.nix
     ./gist/config.nix
     ./vim/config.nix
+    ./rooster/config.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
@@ -14,6 +15,7 @@
     ack
     ag # silver-searcher
     bind # nslookup,dig
+    clipmenu
     curl
     git-lfs
     strace
