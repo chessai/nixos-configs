@@ -14,6 +14,7 @@
       "vboxusers"
       "video"
       "wheel"
+      "adbusers"
     ];
 
     createHome = true;
