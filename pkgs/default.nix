@@ -2,10 +2,12 @@
 
 {
   imports = [
+    ./adb/config.nix
     ./bash/config.nix
     ./gist/config.nix
     ./vim/config.nix
     ./rooster/config.nix
+    ./snoopy/config.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
