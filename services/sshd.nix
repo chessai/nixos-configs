@@ -68,5 +68,17 @@
     Host new-lab
       HostName 10.10.10.234
       User allsight
+    Host uab-collector
+      HostName 192.168.11.20
+      User noc
+      ProxyJump ansible-server
+    Host allsight-cos
+      HostName 10.100.112.202
+      User allsight
+      ProxyJump ansible-server
+    Host dcartwright-cos
+      HostName 10.100.112.202
+      User dcartwright
+      ProxyJump ansible-server
   '';
 }
