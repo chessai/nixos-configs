@@ -4,8 +4,8 @@ let
   snoopySrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "snoopy";
-    rev = "4b5447e6d20765760ee4ee922a7ecea3777ea9d3";
-    sha256 = "0iyij8391c4jrdwn968rd0adrpm1cx2c854i8rxh6l5a4f9wrm80";
+    rev = "5e7d8bcb2cd23d3e4321d0a7fc5f9b84eb043fa0";
+    sha256 = "1yca8i06v0655aszdg2g807y97b1r7ja8mpynhzs3gw3zdc8rgnj";
   };
 in
 {
