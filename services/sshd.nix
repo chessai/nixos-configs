@@ -58,7 +58,7 @@
       User noc
       ProxyJump ansible-server
     Host fcs-collector
-      HostName 10.100.100.254
+      HostName 10.100.100.253
       User noc
       ProxyJump ansible-server
     Host kisd-collector
