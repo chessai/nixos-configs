@@ -5,6 +5,7 @@
     ./adb/config.nix
     ./bash/config.nix
     ./gist/config.nix
+#    ./git/config.nix
     ./vim/config.nix
     ./rooster/config.nix
     ./snoopy/config.nix
