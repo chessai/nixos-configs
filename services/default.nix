@@ -18,6 +18,7 @@
     ./sshd.nix
     ./teamspeak3.nix
     ./toxvpn.nix
+    ./virtualbox.nix
     ./x/xmonad.nix
     ./x/xserver.nix
     ./zfs.nix
