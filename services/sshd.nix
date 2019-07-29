@@ -80,5 +80,8 @@
       HostName 10.100.112.202
       User dcartwright
       ProxyJump ansible-server
+    Host pong-server
+      HostName 10.110.1.117
+      User layer3
   '';
 }
