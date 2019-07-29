@@ -4,14 +4,14 @@ let
   pongSrc = pkgs.fetchFromGitHub {
     owner = "chessai";
     repo = "pong";
-    rev = "b401054ddbbe509716fc35666faeecf6c54830c9";
-    sha256 = "0a3awx4wnb1vga3n7b7cr753iilwc72hmgwbd3id7clfmqg9ndkb";
+    rev = "f60b2a1278c6008a37f3a3c13c8d8bc2528e418c";
+    sha256 = "13ncmrn4iw298wb34hfhy742vhfbjnjdrsz2vbgmsj83qgywb20m";
   };
 in
 {
   config = {
     nixpkgs.overlays = [
-      (super: self: {
+      (self: super: {
         pong = self.callPackage pongSrc {};
       })
     ];
