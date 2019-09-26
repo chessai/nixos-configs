@@ -25,7 +25,7 @@
       egrep = "${pkgs.gnugrep}/bin/grep -E --color=auto";
       fgrep = "${pkgs.gnugrep}/bin/grep -F --color=auto";
       diff = "${pkgs.colordiff}/bin/colordiff";
-      mount = "${pkgs.coreutils}/bin/mount | column -t";
+      #mount = "${pkgs.coreutils}/bin/mount | column -t";
       now = "${pkgs.coreutils}/bin/date +\"%T\"";
       ports = "${pkgs.unixtools.netstat}/bin/netstat -tulanp";
       # get top processes eating mem
@@ -62,7 +62,9 @@
       knuckles = "~/.local/bin/knuckles";
 
       # for work
-      gp = "sudo ${pkgs.openconnect_pa}/bin/openconnect --protocol=gp sentinela.layer3com.com";
+      gp-l3 = "sudo ${pkgs.openconnect_pa}/bin/openconnect --protocol=gp sentinela.layer3com.com";
+      gp-iah = "sudo ${pkgs.openconnect_pa}/bin/openconnect --protocol=gp 64.125.109.186";
+      gp-cde = "sudo ${pkgs.openconnect_pa}/bin/openconnect --protocol=gp 208.88.168.135 --servercert pin-sha256:kYgRi1CPRagd12Rq2//UOdd8WaXQHnzCcBizsf9CyfM=";
     };
   };
 
