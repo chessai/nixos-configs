@@ -5,6 +5,7 @@
     ./docker.nix
     ./elasticsearch.nix
     ./grafana.nix
+    ./influxdb.nix
     ./kafka.nix
     ./locate.nix
     ./logind.nix
@@ -22,6 +23,7 @@
     ./x/xmonad.nix
     ./x/xserver.nix
     ./zfs.nix
+    ./zookeeper.nix
 #    ./hoogle.nix
 #    ./snmpd.nix
   ];
