@@ -24,7 +24,7 @@
       HostName 10.100.122.67
       User noc
       ProxyJump ansible-server
-    Host nsh-collector
+    Host collector-nsh
       HostName 192.168.254.10
       User noc
       ProxyJump ansible-server
@@ -38,37 +38,41 @@
     Host lab2
       HostName 10.10.10.98
       User dcartwright
-    Host dpisd-collector
+    Host collector-dpisd
       HostName 10.100.154.12
       User noc
       ProxyJump ansible-server
-    Host cyfair-collector
+    Host collector-cyfair
       HostName 10.100.155.22
       User noc
       ProxyJump ansible-server
     Host siem-op-1
       HostName 192.168.254.19
       User noc
-    Host dcg-collector
+    Host collector-dcg
       HostName 10.100.128.94
       User noc
       ProxyJump ansible-server
-    Host sch-collector
+    Host collector-sch
       HostName 10.100.102.13
       User noc
       ProxyJump ansible-server
-    Host fcs-collector
+    Host collector-fcs
       HostName 10.100.100.253
       User noc
       ProxyJump ansible-server
-    Host kisd-collector
+    Host collector-kisd
       HostName 10.100.140.101
+      User noc
+      ProxyJump ansible-server
+    Host collector-asu
+      HostName 10.100.119.10
       User noc
       ProxyJump ansible-server
     Host new-lab
       HostName 10.10.10.234
       User allsight
-    Host uab-collector
+    Host collector-uab
       HostName 192.168.11.20
       User noc
       ProxyJump ansible-server
