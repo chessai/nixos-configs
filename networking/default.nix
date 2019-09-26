@@ -16,9 +16,19 @@ in
           psk = secrets.ok;
         };
 
+        ok_mobile = {
+          psk = secrets.ok_mobile;
+        };
+
         haskell-meetup = {
           psk = secrets.haskell-meetup;
         };
+
+        "FRITZ!Box Guest/ Gastzugang" = {
+          psk = secrets.icfp;
+        };
+
+        scandic_easy = {}; # free wifi
       };
     };
 
