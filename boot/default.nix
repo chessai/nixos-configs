@@ -10,18 +10,17 @@
         enable = true;
         version = 2;
         efiSupport = true;
-        efiInstallAsRemovable = false;
+        efiInstallAsRemovable = true;
         device = "nodev";
       };
 
       efi = {
-        canTouchEfiVariables = true;
+        canTouchEfiVariables = false;
       };
     };
 
     kernel = {
       sysctl = {
-        "net.ipv4.ping_group_range" = "0 2147483647";
       };
     };
 
