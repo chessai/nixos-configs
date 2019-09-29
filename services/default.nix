@@ -4,8 +4,8 @@
   imports = [
     ./docker.nix
     ./elasticsearch.nix
-    ./grafana.nix
     ./influxdb.nix
+    ./grafana.nix
     ./kafka.nix
     ./locate.nix
     ./logind.nix
