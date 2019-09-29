@@ -9,6 +9,7 @@
     ./vim/config.nix
     ./rooster/config.nix
     ./snoopy/config.nix
+    ./gp/config.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
