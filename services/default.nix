@@ -29,8 +29,7 @@
   ];
 
   services = {
-    # this service is defined in ./rotera.nix,
-    # and we don't enable it there.
+    # this service is defined in ./rotera.nix.
     rotera = {
       enable = true;
       rotFiles = [ 3 13 4 ];
