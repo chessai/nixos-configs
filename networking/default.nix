@@ -24,6 +24,10 @@ in
           psk = secrets.haskell-meetup;
         };
 
+        "Big Jilm's PP Party" = {
+          psk = secrets.delia;
+        };
+
         "FRITZ!Box Guest/ Gastzugang" = {
           psk = secrets.icfp;
         };
