@@ -8,6 +8,10 @@ in
     hostId = "2def5b23";
     hostName = "chessai-kudu";
 
+    networkmanager = {
+      enable = false;
+    };
+
     wireless = {
       enable = true;
 
@@ -24,7 +28,11 @@ in
           psk = secrets.haskell-meetup;
         };
 
-        "Big Jilm's PP Party" = {
+        "Big Jilm's PP party" = {
+          psk = secrets.delia;
+        };
+
+        "Big Jilm's PP party _5G" = {
           psk = secrets.delia;
         };
 
@@ -33,6 +41,14 @@ in
         };
 
         scandic_easy = {}; # free wifi
+
+        "Little Skips East" = {
+          psk = secrets.little_skips_east;
+        };
+
+        MSFTGUEST = {
+          psk = secrets.msft;
+        };
       };
     };
 
