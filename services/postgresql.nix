@@ -4,10 +4,10 @@
   services.postgresql = {
     enable = true;
 
-    enableTCPIP = true;
+    enableTCPIP = false;
 
     authentication = ''
-      host testdb testuser 127.0.0.1/32 md5
+      host all all 0.0.0.0/0 md5
     '';
 
     ensureDatabases = [

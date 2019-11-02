@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   services.xserver = {
@@ -36,7 +36,7 @@
 
     windowManager.i3 = {
       enable = true;
-      #configFile = ./i3/config
+      configFile = "/home/chessai/.config/i3/config";
     };
 
     # Enable touchpad support.

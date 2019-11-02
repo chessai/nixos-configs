@@ -21,6 +21,9 @@ in
   services.elasticsearch = {
     enable = true;
     package = pkgs.elasticsearch5;
+    extraConf = ''
+      node.attr.speed: fast
+    '';
   };
 
   nixpkgs.overlays = [

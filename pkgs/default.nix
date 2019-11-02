@@ -1,59 +1,58 @@
 { config, pkgs, ... }:
 
-{
-  imports = [
-    ./adb/config.nix
-    ./bash/config.nix
-    ./gist/config.nix
-    ./pong/config.nix
-    ./vim/config.nix
-    ./rooster/config.nix
-    ./snoopy/config.nix
-    ./gp/config.nix
+with rec {
+  extractScript = pkgs.writeShellScriptBin "extract" ''
+    if [ -z "$1" ]; then
+      echo "Usage: extract </path/to/file>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|sz|ex|tar.bz2|tar.gz|tar.xz>"
+    else
+      if [ -f $1 ]; then
+        case $1 in
+          *.tar.bz2)   ${pkgs.gnutar} xvjf ./$1    ;;
+          *.tar.gz)    ${pkgs.gnutar} xvzf ./$1    ;;
+          *.tar.xz)    ${pkgs.gnutar} xvJf ./$1    ;;
+          *.lzma)      ${pkgs.xz} --format=lzma --decompress ./$1 ;;
+          *.bz2)       ${pkgs.bzip2}/bin/bzip2 -d ./$1 ;;
+          *.rar)       ${pkgs.unrar}/bin/unrar x -ad ./$1 ;;
+          *.gz)        ${pkgs.gzip}/bin/gzip -d ./$1      ;;
+          *.tar)       ${pkgs.gnutar} xvf ./$1     ;;
+          *.tbz2)      ${pkgs.gnutar} xvjf ./$1    ;;
+          *.tgz)       ${pkgs.gnutar} xvzf ./$1    ;;
+          *.zip)       ${pkgs.unzip}/bin/unzip ./$1       ;;
+          *.Z)         ${pkgs.ncompress}/bin/uncompress ./$1  ;;
+          *.7z)        ${pkgs.p7zip}/bin/7z x ./$1        ;;
+          *.xz)        ${pkgs.xz}/bin/xz --decompress ./$1 ;;
+          *.exe)       ${pkgs.cabextract}/bin/cabextract ./$1  ;;
+          *.cab)       ${pkgs.cabextract}/bin/cabextract ./$1  ;;
+          *)           echo "extract: '$1' - unknown archive method" ;;
+        esac
+      else
+          echo "$1 - file does not exist"
+      fi
+    fi
+  '';
+
+  gcL3Script = pkgs.writeShellScriptBin "gc-l3" ''
+    if [ -z "$1" ]; then
+      echo "Usage: gc-l3 <repo>"
+    else
+      ${pkgs.git}/bin/git clone git@github.com:layer-3-communications/$1
+    fi
+  '';
+
+  scripts = [
+    extractScript
+    gcL3Script
   ];
 
+  baseSystemPackages = with pkgs; [
+    ag
+  ];
+
+  systemPackages = scripts ++ baseSystemPackages;
+};
+
+{
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep <pkg>
-  environment.systemPackages = with pkgs; [
-    (if config.services.xserver.enable then gitAndTools.gitFull else git)
-    #haskell-ci
-    #json-autotype
-    #openconnect_pa
-    ack
-    ag # silver-searcher
-    alacritty
-    bind # nslookup,dig
-    cachix
-    clipmenu
-    cloc
-    cmake
-    curl
-    file
-    gcc
-    ghcid
-    git-lfs
-    gitAndTools.hub
-    htop
-    jq
-    mosh
-    net_snmp
-    nixops
-    #nixpkgs-pkgconfig # wrapper for pkgconfig that points it to the proper stuff
-    pavucontrol
-    sshpass
-    strace
-    sudo
-    tcpdump
-    tcpflow
-    tldr
-    tmux
-    tree
-    unzip
-    wget
-    wpa_supplicant
-    wpa_supplicant_gui
-    xfce4-14.xfce4-screenshooter #what a strange prefix.
-    youtube-dl
-    zip
-  ];
+  environment = { inherit systemPackages; };
 }
