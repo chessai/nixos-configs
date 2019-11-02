@@ -1,18 +1,17 @@
 chessai's nixos configs
 =======================
 
-## goal
-goal is to have no one service manage its own configuration, instead
-for all things to be centralised, therefore making my system as
-reproducibleas possible.
-
-## things configured:
+## layout
 * boot/       : bootloader, efi
-* networking/ : host info, wireless, firewall, nameservers
+* home/       : home-manager configuration
+* i18n/       : console fonts, locale, keymap
+* kernel/     : linux kernel configuration
+* networking/ : host info, wireless, firewall, nameservers, etc.
 * nix/        : binary caches, system nixpkgs, nix system
-* pkgs/       : mainly vim, system packages
+* overlays/   : miscellaneous overlays
+* pavu/       : pavucontrol configuration
+* pkgs/       : system packages
 * services/   : all my systemd services (e.g. docker, hoogle, postgres, sshd, etc.)
+* systemd/    : systemd configuration
+* time/       : system time/location
 * users/      : system users
-
-## things missing:
-* i3 configuration
