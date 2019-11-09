@@ -35,7 +35,7 @@ with {
       rooster
       teamspeak_client
       tree
-      xfce4-screenshooter
+      xfce4-14.xfce4-screenshooter
     ];
 
     sessionVariables = {
