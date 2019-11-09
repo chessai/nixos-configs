@@ -36,7 +36,7 @@
 
     windowManager.i3 = {
       enable = true;
-      configFile = "/home/chessai/.config/i3/config";
+      configFile = ./i3/config;
     };
 
     # Enable touchpad support.
