@@ -9,11 +9,6 @@
     historyControl = [ "ignoredups" ];
     historyIgnore = [ "ls" "cd" "exit" ];
 
-    sessionVariables = {
-      GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
-      LC_CTYPE = "en_US.UTF-8";
-    };
-
     shellAliases = {
       ghc865 = "nix-shell -p haskell.compiler.ghc865";
       ghc881 = "nix-shell -p haskell.compiler.ghc881";
@@ -41,6 +36,7 @@
     };
 
     initExtra = lib.mkBefore ''
+      . "/home/chessai/.nix-profile/etc/profile.d/hm-session-vars.sh"
       set -o vi
     '';
   };

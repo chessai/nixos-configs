@@ -4,6 +4,8 @@ with {
   # TODO: 19.09 should be some kind of input
   homeManager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/release-19.09.tar.gz";
 
+  secrets = import ./secrets.nix;
+
   homeDir = "/home/chessai";
 };
 
@@ -16,22 +18,31 @@ with {
     ./git
     ./jq
     ./mpv
+    ./rooster/config.nix
     ./vim
   ];
 
   home-manager.users.chessai.home = {
     packages = with pkgs; [
       cabal-install
-      gist 
-      openconnect_pa
-      #chromium
-      #json-autotype
-      #syncplay
-      #teamspeak_client
+      cabal2nix
+      cachix
+      ghcid
+      gist
+      haskell-ci
       niv
-      #nix-tools
+      openconnect_pa
+      rooster
+      teamspeak_client
+      tree
+      xfce4-screenshooter
     ];
+
+    sessionVariables = {
+      GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
+      LC_CTYPE = "en_US.UTF-8";
+      GITHUB_TOKEN = secrets.niv;
+      EDITOR = "${pkgs.vim}/bin/vim";
+    };
   };
-
-
 }
