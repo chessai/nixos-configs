@@ -3,7 +3,6 @@
 {
   imports = [
     ./chessai.nix
-    #./postgres.nix
     ./root-authorizedKeys.nix
   ];
 }
