@@ -1,5 +1,5 @@
 {
   services.zookeeper = {
-    enable = false;
+    enable = true;
   };
 }
