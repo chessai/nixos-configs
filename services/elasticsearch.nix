@@ -19,7 +19,7 @@ in
   ];
 
   services.elasticsearch = {
-    enable = true;
+    enable = false;
     package = pkgs.elasticsearch5;
     extraConf = ''
       node.attr.speed: fast
