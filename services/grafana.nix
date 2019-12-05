@@ -2,7 +2,7 @@
 
 {
   services.grafana = {
-    enable = true;
+    enable = false;
     protocol = "http";
   };
 }
