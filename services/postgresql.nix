@@ -2,24 +2,16 @@
 
 {
   services.postgresql = {
+    package = pkgs.postgresql_10;
     enable = true;
-
     enableTCPIP = false;
-
     authentication = ''
-      host all all 0.0.0.0/0 md5
+      local all all trust
+      host all all 127.0.0.1/32 trust
+      host all all ::1/128 trust
     '';
-
-    ensureDatabases = [
-      "testdb"
-    ];
-
-    ensureUsers = [
-      { name = "testuser";
-        ensurePermissions = {
-          "DATABASE testdb" = "ALL PRIVILEGES";
-        };
-      }
-    ];
+    extraConfig = ''
+      timezone = 'UTC'
+    '';
   };
 }
