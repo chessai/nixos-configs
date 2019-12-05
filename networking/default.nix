@@ -16,39 +16,27 @@ in
       enable = true;
 
       networks = {
-        ok = {
-          psk = secrets.ok;
-        };
+        ok = { psk = secrets.ok; };
 
-        ok_mobile = {
-          psk = secrets.ok_mobile;
-        };
+        ok_mobile = { psk = secrets.ok_mobile; };
 
-        haskell-meetup = {
-          psk = secrets.haskell-meetup;
-        };
+        haskell-meetup = { psk = secrets.haskell-meetup; };
 
-        "Big Jilm's PP party" = {
-          psk = secrets.delia;
-        };
+        "Big Jilm's PP party" = { psk = secrets.delia; };
 
-        "Big Jilm's PP party _5G" = {
-          psk = secrets.delia;
-        };
+        "Big Jilm's PP party _5G" = { psk = secrets.delia; };
 
-        "FRITZ!Box Guest/ Gastzugang" = {
-          psk = secrets.icfp;
-        };
+        "FRITZ!Box Guest/ Gastzugang" = { psk = secrets.icfp; };
+
+        cotangentbundle = { psk = secrets.cotangentbundle; };
 
         scandic_easy = {}; # free wifi
 
-        "Little Skips East" = {
-          psk = secrets.little_skips_east;
-        };
+        "Little Skips East" = { psk = secrets.little_skips_east; };
 
-        MSFTGUEST = {
-          psk = secrets.msft;
-        };
+        MSFTGUEST = { psk = secrets.msft; };
+
+        mercury-guest = { psk = secrets.mercury-guest; };
       };
     };
 
@@ -63,5 +51,6 @@ in
       "8.8.8.8"
       "8.8.4.4"
     ];
+
   };
 }
