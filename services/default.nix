@@ -2,7 +2,6 @@
 
 {
   imports = [
-    #./diamond.nix
     ./docker.nix
     ./elasticsearch.nix
     ./influxdb.nix
@@ -14,6 +13,7 @@
     ./nginx.nix
     ./nixosManual.nix
     ./ntp.nix
+    ./openvpn.nix
     ./postgresql.nix
     ./printing.nix
     ./rotera.nix
