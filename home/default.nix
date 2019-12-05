@@ -33,7 +33,7 @@ with {
       niv
       openconnect_pa
       rooster
-      teamspeak_client
+      #teamspeak_client
       tree
       xfce4-14.xfce4-screenshooter
     ];
