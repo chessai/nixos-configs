@@ -15,7 +15,7 @@
     layout = "us";
 
     desktopManager = {
-      default = "none";
+      #default = "none";
       xterm.enable = false;
     };
 
