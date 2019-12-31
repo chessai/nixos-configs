@@ -2,6 +2,7 @@
 
 {
   imports = [
+    #./diamond.nix
     ./docker.nix
     ./elasticsearch.nix
     ./influxdb.nix
@@ -37,5 +38,16 @@
       rotFiles = [ 3 13 4 ];
       clear = true;
     };
+
+    #diamond = {
+    #  enable = true;
+    #  dbHost = "carbon";
+    #  dbPort = 2003;
+    #  configFile = pkgs.writeTextFile {
+    #    name = "diamond.yaml";
+    #    text = builtins.readFile ./diamond.yaml;
+    #  };
+    #  grafanaKey = "this will fail";
+    #};
   };
 }
