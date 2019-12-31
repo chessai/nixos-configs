@@ -114,3 +114,9 @@ autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal,*.nix %s/\s\+$//e
 
 " Jump to identifiers/definitions with ctags
 " nnoremap goto :CtrlPTag<cr>
+
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml', 'package.yaml', 'Cargo.toml']
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rls'],
+    \ 'haskell': ['ghcide', '--lsp'],
+    \ }
