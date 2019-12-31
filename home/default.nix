@@ -20,6 +20,7 @@ with {
     ./mpv
     ./rooster/config.nix
     ./vim
+    ./hinit/config.nix
   ];
 
   home-manager.users.chessai.home = {
@@ -29,11 +30,12 @@ with {
       cachix
       ghcid
       gist
-      haskell-ci
+      # haskell-ci
       niv
+      hinit
       openconnect_pa
       rooster
-      #teamspeak_client
+      teamspeak_client
       tree
       xfce4-14.xfce4-screenshooter
     ];
