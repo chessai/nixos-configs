@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   time = {
-    timeZone = "America/New_York";
+    timeZone = "America/Los_Angeles";
     hardwareClockInLocalTime = false;
   };
 }

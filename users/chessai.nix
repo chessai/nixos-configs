@@ -5,6 +5,8 @@
     description = "chessai";
     isNormalUser = true;
     uid = 1000;
+    createHome = true;
+    home = "/home/chessai";
     extraGroups = [
       "audio"
       "docker"
@@ -16,8 +18,5 @@
       "wheel"
       "adbusers"
     ];
-
-    createHome = true;
-    home = "/home/chessai";
   };
 }

@@ -3,6 +3,5 @@
 {
   imports = [
     ./chessai.nix
-    ./root-authorizedKeys.nix
   ];
 }

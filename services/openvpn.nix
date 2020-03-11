@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   services.openvpn.servers = {
     mercury = {
@@ -19,7 +21,6 @@
         remote-cert-tls server
         auth-nocache
         reneg-sec 0
-        #foo
       '';
     };
   };

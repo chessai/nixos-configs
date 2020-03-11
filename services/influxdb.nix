@@ -1,5 +1,0 @@
-{
-  services.influxdb = {
-    enable = true;
-  };
-}

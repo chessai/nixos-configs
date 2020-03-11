@@ -33,6 +33,9 @@
       ".10" = "cd ../../../../../../../../../../..";
 
       gist = "gist --private";
+
+      ts = "nix-shell -E 'let pkgs = import <nixpkgs> {}; in pkgs.mkShell { buildInputs = with pkgs; [ nodejs yarn nodePackages.typescript ]; }'";
+
     };
 
     initExtra = lib.mkBefore ''

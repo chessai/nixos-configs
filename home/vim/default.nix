@@ -4,12 +4,16 @@
   home-manager.users.chessai.programs.vim = {
     enable = true;
 
-    plugins = [
-      "vim-nix"
-      "airline"
-      "rainbow_parentheses"
-      "ctrlp-vim"
-      "youcompleteme"
+    plugins = with pkgs.vimPlugins; [
+      #LanguageClient-neovim
+      airline
+      #coc-nvim
+      #ctrlp-vim
+      haskell-vim
+      rainbow_parentheses
+      vim-nix
+      #vim-hindent
+      #youcompleteme
     ];
 
     extraConfig = builtins.readFile ./vimrc;
