@@ -9,6 +9,5 @@
     ./sshd.nix
     ./x/xserver.nix
     ./zfs.nix
-    ./nixosManual.nix
   ];
 }

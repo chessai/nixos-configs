@@ -15,11 +15,12 @@ with {
     ./git
     ./jq
     ./mpv
+    #./pointfree
     #./rooster/config.nix
     ./vim
     ./vscode
-    ./hinit/config.nix
-    ./pretty-ghci/config.nix
+    #./hinit/config.nix
+    #./pretty-ghci/config.nix
   ];
 
   home-manager.users.chessai = {
@@ -35,17 +36,21 @@ with {
         cabal-install
         cabal2nix
         cachix
+        file
         ghcid
         gist
         #haskell-ci
         #niv
-        hinit
+        #hinit
         pavucontrol
-        pp-ghci
+        #pp-ghci
         #rooster
+        #pointfree
         silver-searcher
         teamspeak_client
+        tldr
         tree
+        wget
         xfce4-14.xfce4-screenshooter
       ];
 

@@ -44,6 +44,14 @@ with rec {
     mv "/home/chessai/Downloads/$newest" .
     echo "$newest"
   '';
+
+  freshGhcScript = pkgs.writeShellScriptBin "fresh-ghc" ''
+    cd /home/chessai
+    git clone --recursive https://gitlab.haskell.org/ghc/ghc
+    cd ghc
+    git clone https://github.com/alpmestan/ghc.nix
+    nix-shell ghc.nix/ --run "./boot && ./configure && ghcid"
+  '';
 };
 
 {
@@ -53,5 +61,6 @@ with rec {
     gcChScript
     extractScript
     cpdlScript
+    freshGhcScript
   ];
 }

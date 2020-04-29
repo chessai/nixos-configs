@@ -5,10 +5,6 @@ let
 in
 {
   networking = {
-    networkmanager = {
-      enable = false;
-    };
-
     wireless = {
       enable = true;
       networks = {
