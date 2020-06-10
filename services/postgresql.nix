@@ -3,7 +3,7 @@
 {
   services.postgresql = {
     package = pkgs.postgresql_10;
-    enable = true;
+    enable = false;
     enableTCPIP = false;
     authentication = ''
       local all all trust
