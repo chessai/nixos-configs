@@ -16,16 +16,13 @@
       "vim.useSystemClipboard" = true;
       "vim.useCtrlKeys" = true;
       "vim.hlsearch" = true;
+
+      "files.insertFinalNewline" = true;
     };
 
-    extensions = with pkgs.vscode-extensions; [
-      vscodevim.vim
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      #{ name = "TSLint";
-      #  publisher = "Microsoft";
-      #  version = "v1.2.3";
-      #  sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
-      #}
-    ];
+    #extensions = with pkgs.vscode-extensions; [
+    #  bbenoist.Nix
+    #  #vscodevim.vim
+    #];
   };
 }
