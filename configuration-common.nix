@@ -3,6 +3,7 @@
 {
   imports = [
     ./boot
+    ./fonts
     ./home
     ./networking
     ./nix
