@@ -17,6 +17,7 @@
       "video"
       "wheel"
       "adbusers"
+      "wireshark"
     ];
   };
 }
