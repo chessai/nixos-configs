@@ -2,7 +2,7 @@
 
 with {
   # TODO: 19.09 should be some kind of input
-  homeManager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/release-19.09.tar.gz";
+  homeManager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/release-20.03.tar.gz";
 };
 
 {
@@ -11,16 +11,13 @@ with {
     ./alacritty
     ./bash
     ./chromium
-    #./hie
+    ./firefox
     ./git
     ./jq
     ./mpv
-    #./pointfree
-    #./rooster/config.nix
+    ./sway
     ./vim
     ./vscode
-    #./hinit/config.nix
-    #./pretty-ghci/config.nix
   ];
 
   home-manager.users.chessai = {
@@ -35,31 +32,30 @@ with {
       packages = with pkgs; [
         cabal-install
         cabal2nix
-        cachix
         file
         ghcid
         gist
-        #haskell-ci
-        #niv
-        #hinit
+        haskellPackages.hasktags
+        htop
+        nix-prefetch-git
+        obs-studio
         pavucontrol
-        #pp-ghci
-        #rooster
-        #pointfree
+        remmina
+        ripgrep
         silver-searcher
+        stylish-haskell
         teamspeak_client
         tldr
         tree
         wget
-        xfce4-14.xfce4-screenshooter
+        wireshark-qt
       ];
 
-      sessionVariables = {
-        GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
-        LC_CTYPE = "en_US.UTF-8";
-        #GITHUB_TOKEN = secrets.niv;
-        EDITOR = "${pkgs.vim}/bin/vim";
-      };
+      #sessionVariables = {
+      #  GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
+      #  LC_CTYPE = "en_US.UTF-8";
+      #  EDITOR = "${pkgs.vim}/bin/vim";
+      #};
     };
   };
 }

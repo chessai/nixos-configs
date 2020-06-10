@@ -7,7 +7,6 @@
     ./openvpn.nix
     ./postgresql.nix
     ./sshd.nix
-    ./x/xserver.nix
     ./zfs.nix
   ];
 }
