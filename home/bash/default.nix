@@ -41,7 +41,8 @@ with { cds = import ./cds.nix; };
     initExtra = lib.mkBefore ''
       export GRAPHVIZ_DOT="${pkgs.graphviz}/bin/dot"
       export LC_CTYPE="en_US.UTF-8";
-      export EDITOR="${pkgs.vim}/bin/vim";
+      export EDITOR="nvim";
+      export VISUAL="nvim";
 
       set -o vi
     '';

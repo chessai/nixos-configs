@@ -1,22 +1,19 @@
 { config, pkgs, lib, ... }:
 
 {
-  home-manager.users.chessai.programs.vim = {
+  home-manager.users.chessai.programs.neovim = {
     enable = true;
 
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+
+    withNodeJs = true;
+
     plugins = with pkgs.vimPlugins; [
-      #LanguageClient-neovim
-      airline
-      #coc-nvim
-      #ctrlp-vim
-      haskell-vim
-      rainbow_parentheses
-      vim-nix
-      #vim-stylish-haskell
-      #vim-hindent
-      #youcompleteme
+      agda-vim
     ];
 
-    extraConfig = builtins.readFile ./vimrc;
+    #extraConfig = builtins.readFile ./vimrc;
   };
 }

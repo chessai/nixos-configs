@@ -40,6 +40,7 @@ with {
         ghcid
         gist
         haskell-ci
+        haskell-language-server
         haskellPackages.hasktags
         htop
         nix-deploy
@@ -48,6 +49,7 @@ with {
         pavucontrol
         remmina
         ripgrep
+        rnix-lsp
         silver-searcher
         stylish-haskell
         teamspeak_client
@@ -57,7 +59,13 @@ with {
         wireshark-qt
         xfce.xfce4-screenshooter
         youtube-dl
-      ];
+      ] ++ (with pkgs.nodePackages; [
+        typescript-language-server
+        vscode-html-languageserver-bin
+        vscode-css-languageserver-bin
+        bash-language-server
+        yaml-language-server
+      ]);
 
       #sessionVariables = {
       #  GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
