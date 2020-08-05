@@ -20,12 +20,5 @@ chessai's nixos configs
 * users/      : system users
 
 ## building
-you need some secrets.nix files for the network stuff,
-once you get that you can build one of the `configuration-*.nix`
-files with:
-
-```
-nix-build -E '(import <nixpkgs/nixos> { configuration = ./configuration-machine.nix; }).system'
-```
-
-but replace `machine` with the relevant string
+you need some secrets.nix files for the network stuff, after that you can just
+`nix-build`.
