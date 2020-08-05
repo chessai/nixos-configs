@@ -19,8 +19,8 @@ with { cds = import ./cds.nix; };
       ls = "${pkgs.coreutils}/bin/ls --color=auto";
 
       git = "${pkgs.gitAndTools.hub}/bin/hub";
-      gc = "${pkgs.gitAndTools.hub}/bin/hub clone";
       gs = "${pkgs.gitAndTools.hub}/bin/hub status";
+      gc = "${pkgs.gitAndTools.hub}/bin/hub clone";
       git-initial-commit = "${pkgs.gitAndTools.hub}/bin/hub commit -m \"Creō ā nihilō\"";
 
       gist = "gist --private";
@@ -34,11 +34,11 @@ with { cds = import ./cds.nix; };
       rs-nightly-refresh = "nix-env -iA nixos.latest.rustChannels.nightly.rust";
     };
 
-    initExtra = lib.mkBefore ''
-      # Only source this once.
-      if [ -n "$__HM_SESS_VARS_SOURCED" ]; then return; fi
-      export __HM_SESS_VARS_SOURCED=1
+    # Only source this once.
+    # if [ -n "$__HM_SESS_VARS_SOURCED" ]; then return; fi
+    # export __HM_SESS_VARS_SOURCED=1
 
+    initExtra = lib.mkBefore ''
       export GRAPHVIZ_DOT="${pkgs.graphviz}/bin/dot"
       export LC_CTYPE="en_US.UTF-8";
       export EDITOR="${pkgs.vim}/bin/vim";

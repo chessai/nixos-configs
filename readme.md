@@ -2,7 +2,9 @@ chessai's nixos configs
 =======================
 
 ## layout
-* boot/       : bootloader, efi
+* editors/    : editor configs
+* fonts/      : fonts available to the system
+* games/      : video games
 * home/       : home-manager configuration
 * i18n/       : console fonts, locale, keymap
 * kernel/     : linux kernel configuration
@@ -10,8 +12,20 @@ chessai's nixos configs
 * nix/        : binary caches, system nixpkgs, nix system
 * overlays/   : miscellaneous overlays
 * pavu/       : pavucontrol configuration
-* pkgs/       : system packages
-* services/   : all my systemd services (e.g. docker, hoogle, postgres, sshd, etc.)
+* scripts/    : useful shell scripts
+* security/   : security-related config
+* services/   : all my systemd services (e.g. docker, hoogle, postgres, etc.)
 * systemd/    : systemd configuration
 * time/       : system time/location
 * users/      : system users
+
+## building
+you need some secrets.nix files for the network stuff,
+once you get that you can build one of the `configuration-*.nix`
+files with:
+
+```
+nix-build -E '(import <nixpkgs/nixos> { configuration = ./configuration-machine.nix; }).system'
+```
+
+but replace `machine` with the relevant string

@@ -4,11 +4,12 @@ let
   modifier = "Mod4";
 in
 {
-  # technically outside of home-manager. kept here for congruency of thought
-  programs.sway.enable = true;
+  # technically outside of home-manager, but necessary.
+  # kept here for congruency of thought
+  programs.sway.enable = false;
 
   home-manager.users.chessai.wayland.windowManager.sway = {
-    enable = true;
+    enable = false;
 
     config = {
       # note this is only used for window tiles.

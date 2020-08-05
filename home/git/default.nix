@@ -57,6 +57,12 @@
       "tags"
     ];
 
+    # enable git lfs (large file system)
     lfs.enable = true;
+
+    extraConfig = {
+      # pull rebases by default
+      pull.rebase = true;
+    };
   };
 }

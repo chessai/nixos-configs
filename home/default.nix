@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 with {
-  # TODO: 19.09 should be some kind of input
+  # TODO: 20.03 should be some kind of input
   homeManager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/release-20.03.tar.gz";
 };
 
@@ -15,9 +15,11 @@ with {
     ./git
     ./jq
     ./mpv
+    ./nix-deploy
+    ./ssh
     ./sway
     ./vim
-    ./vscode
+    # ./vscode
   ];
 
   home-manager.users.chessai = {
@@ -30,13 +32,17 @@ with {
 
     home = {
       packages = with pkgs; [
+        arandr
+        bind
         cabal-install
         cabal2nix
         file
         ghcid
         gist
+        haskell-ci
         haskellPackages.hasktags
         htop
+        nix-deploy
         nix-prefetch-git
         obs-studio
         pavucontrol
@@ -49,6 +55,8 @@ with {
         tree
         wget
         wireshark-qt
+        xfce.xfce4-screenshooter
+        youtube-dl
       ];
 
       #sessionVariables = {
