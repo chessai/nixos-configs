@@ -17,6 +17,7 @@ with { cds = import ./cds.nix; };
       ghc810 = "nix-shell -p haskell.compiler.ghc8101";
 
       ls = "${pkgs.exa}/bin/exa";
+      cat = "${pkgs.bat}/bin/bat";
 
       git = "${pkgs.gitAndTools.hub}/bin/hub";
       gs = "${pkgs.gitAndTools.hub}/bin/hub status";
