@@ -37,6 +37,7 @@ with {
         cabal-install
         cabal2nix
         file
+	fd
         ghcid
         gist
         haskell-ci
