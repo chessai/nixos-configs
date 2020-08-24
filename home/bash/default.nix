@@ -16,7 +16,7 @@ with { cds = import ./cds.nix; };
       ghc88  = "nix-shell -p haskell.compiler.ghc883";
       ghc810 = "nix-shell -p haskell.compiler.ghc8101";
 
-      ls = "${pkgs.coreutils}/bin/ls --color=auto";
+      ls = "${pkgs.exa}/bin/exa";
 
       git = "${pkgs.gitAndTools.hub}/bin/hub";
       gs = "${pkgs.gitAndTools.hub}/bin/hub status";
@@ -29,6 +29,8 @@ with { cds = import ./cds.nix; };
       ts = "nix-shell -E 'let pkgs = import <nixpkgs> {}; in pkgs.mkShell { buildInputs = with pkgs; [ nodejs-13_x yarn nodePackages.typescript ]; }'";
 
       sq = "sed -e 's/^\"//' -e 's/\"$//'";
+
+      ":q" = "exit";
 
       # install newest nightly rust
       rs-nightly-refresh = "nix-env -iA nixos.latest.rustChannels.nightly.rust";
@@ -45,6 +47,9 @@ with { cds = import ./cds.nix; };
       export VISUAL="nvim";
 
       set -o vi
+
+      # must be at the end
+      eval "$(${pkgs.starship}/bin/starship init bash)"
     '';
   };
 }
