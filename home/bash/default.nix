@@ -31,8 +31,6 @@ with { cds = import ./cds.nix; };
       yarn = "yarn --ignore-engines";
       ts = "nix-shell -E 'let pkgs = import <nixpkgs> {}; in pkgs.mkShell { buildInputs = with pkgs; [ nodejs-13_x yarn nodePackages.typescript ]; }'";
 
-      sq = "sed -e 's/^\"//' -e 's/\"$//'";
-
       ":q" = "exit";
 
       # install newest nightly rust
