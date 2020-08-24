@@ -9,7 +9,7 @@ in
       enable = true;
       networks = {
         inherit (secrets)
-          BootyholeCapone69
+          cwhome
           mercury;
       };
     };
