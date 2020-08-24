@@ -18,6 +18,8 @@ with { cds = import ./cds.nix; };
 
       ls = "${pkgs.exa}/bin/exa";
       cat = "${pkgs.bat}/bin/bat";
+      grep = "${pkgs.ripgrep}/bin/rg";
+      rg = "${pkgs.ripgrep}/bin/rg";
 
       git = "${pkgs.gitAndTools.hub}/bin/hub";
       gs = "${pkgs.gitAndTools.hub}/bin/hub status";
