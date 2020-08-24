@@ -10,7 +10,7 @@ with {
     "${homeManager}/nixos"
     ./alacritty
     ./bash
-    ./chromium
+    #./chromium
     ./firefox
     ./git
     ./jq
