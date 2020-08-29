@@ -14,6 +14,6 @@
       agda-vim
     ];
 
-    #extraConfig = builtins.readFile ./vimrc;
+    extraConfig = builtins.readFile ./vimrc;
   };
 }
