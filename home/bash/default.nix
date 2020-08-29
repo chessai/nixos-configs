@@ -16,8 +16,9 @@ with { cds = import ./cds.nix; };
       ghc88  = "nix-shell -p haskell.compiler.ghc883";
       ghc810 = "nix-shell -p haskell.compiler.ghc8101";
 
-      ls = "${pkgs.exa}/bin/exa";
-      cat = "${pkgs.bat}/bin/bat";
+      ls = "${pkgs.exa}/bin/exa -G --color auto --icons -a -s type";
+      ll = "${pkgs.exa}/bin/exa -l --color always --icons -a -s type";
+      cat = "${pkgs.bat}/bin/bat -pp --theme=\"Nord\"";
       grep = "${pkgs.ripgrep}/bin/rg";
       rg = "${pkgs.ripgrep}/bin/rg";
 
