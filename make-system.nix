@@ -11,6 +11,7 @@
     ./editors
     ./fonts
     ./games
+    ./hardware
     ./home
     ./networking
     ./nix
