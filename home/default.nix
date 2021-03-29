@@ -2,7 +2,9 @@
 
 with {
   # TODO: 20.03 should be some kind of input
-  homeManager = builtins.fetchTarball "https://github.com/rycee/home-manager/archive/release-20.03.tar.gz";
+  homeManager = builtins.fetchTarball {
+    url = "https://github.com/rycee/home-manager/archive/release-20.09.tar.gz";
+  };
 };
 
 {
@@ -11,9 +13,9 @@ with {
     ./alacritty
     ./bash
     #./chromium
-    ./firefox
     ./git
     ./jq
+    ./man
     ./mpv
     ./nix-deploy
     ./ssh
@@ -37,10 +39,9 @@ with {
         cabal-install
         cabal2nix
         file
-	fd
+        fd
         ghcid
         gist
-        haskell-ci
         haskell-language-server
         haskellPackages.hasktags
         htop

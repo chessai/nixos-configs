@@ -63,6 +63,9 @@
     extraConfig = {
       # pull rebases by default
       pull.rebase = true;
+
+      url."ssh://git@git.haskell.org/".pushInsteadOf = "git://git.haskell.org/";
+      #url."ssh://git@git.haskell.org/".pushInsteadOf = "https://gitlab.haskell.org/";
     };
   };
 }
