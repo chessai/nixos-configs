@@ -3,6 +3,8 @@
 {
   imports = [
     ./cups.nix
+    ./duckling.nix
+    ./duckling/default.nix
     ./hoogle.nix
     ./locate.nix
     ./openvpn.nix
