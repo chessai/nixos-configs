@@ -9,8 +9,7 @@ in
       enable = true;
       networks = {
         inherit (secrets)
-          cwhome
-          mercury;
+          cwhome;
       };
     };
 
