@@ -27,13 +27,11 @@ in
       "http://cache.nixos.org" # nixos.org
       "http://cache.earthtools.ca" # clever
       "https://hydra.iohk.io" # IOHK
-      "https://cache.mercury.com" # mercury
     ];
 
     binaryCachePublicKeys = [
       "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" # IOHK
       "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c=" # clever
-      "cache.mercury.com:yhfFlgvqtv0cAxzflJ0aZW3mbulx4+5EOZm6k3oML+I=" # mercury
     ];
 
     extraOptions = lib.mkOrder 1 ''
