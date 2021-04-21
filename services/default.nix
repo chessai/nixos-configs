@@ -3,6 +3,7 @@
 {
   imports = [
     ./cups.nix
+    ./docker.nix
     ./duckling.nix
     ./duckling/default.nix
     ./hoogle.nix
