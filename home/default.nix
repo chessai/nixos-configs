@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 
 with {
-  # TODO: 20.03 should be some kind of input
   homeManager = builtins.fetchTarball {
     url = "https://github.com/rycee/home-manager/archive/release-20.09.tar.gz";
   };
