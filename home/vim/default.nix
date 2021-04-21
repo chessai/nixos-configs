@@ -12,6 +12,11 @@
 
     plugins = with pkgs.vimPlugins; [
       agda-vim
+      haskell-vim
+      vim-nix
+      nerdtree
+      nerdcommenter
+      rainbow_parentheses
     ];
 
     extraConfig = builtins.readFile ./vimrc;
