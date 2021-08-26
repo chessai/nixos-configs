@@ -4,8 +4,7 @@
   imports = [
     ./cups.nix
     ./docker.nix
-    ./duckling.nix
-    ./duckling/default.nix
+    # ./duckling.nix
     ./hoogle.nix
     ./locate.nix
     ./postgresql.nix
