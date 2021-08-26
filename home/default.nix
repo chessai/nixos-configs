@@ -2,7 +2,7 @@
 
 with {
   homeManager = builtins.fetchTarball {
-    url = "https://github.com/rycee/home-manager/archive/release-20.09.tar.gz";
+    url = "https://github.com/rycee/home-manager/archive/release-21.05.tar.gz";
   };
 };
 
