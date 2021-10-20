@@ -9,7 +9,8 @@ in
       enable = true;
       networks = {
         inherit (secrets)
-          cwhome;
+          cwhome
+          "69420";
       };
     };
 
