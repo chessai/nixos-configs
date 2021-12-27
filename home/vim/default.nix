@@ -9,7 +9,7 @@
     vimdiffAlias = true;
 
     withNodeJs = true;
-    withPython = false;
+    #withPython = false;
 
     plugins = with pkgs.vimPlugins; [
       agda-vim
