@@ -12,10 +12,10 @@ with { cds = import ./cds.nix; };
     historyIgnore = [ "ls" "cd" "exit" ];
 
     shellAliases = cds // {
-      ghc86  = "nix-shell -p haskell.compiler.ghc865";
-      ghc884 = "nix-shell -p haskell.compiler.ghc884";
-      ghc810 = "nix-shell -p haskell.compiler.ghc8104";
+      ghc88  = "nix-shell -p haskell.compiler.ghc884";
+      ghc810 = "nix-shell -p haskell.compiler.ghc8107";
       ghc9   = "nix-shell -p haskell.compiler.ghc901";
+      ghc92  = "nix-shell -p haskell.compiler.ghc921";
 
       ls = "${pkgs.exa}/bin/exa -G --color auto --icons -a -s type";
       ll = "${pkgs.exa}/bin/exa -l --color always --icons -a -s type";
