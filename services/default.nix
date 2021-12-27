@@ -9,6 +9,7 @@
     ./locate.nix
     ./postgresql.nix
     ./sshd.nix
+    ./tailscale.nix
     ./toxvpn.nix
     ./xserver.nix
     ./zfs.nix
