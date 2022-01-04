@@ -12,7 +12,7 @@
     ./fonts
     ./games
     ./hardware
-    ./home
+    #./home
     ./networking
     ./nix
     ./pavu
