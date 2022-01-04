@@ -38,6 +38,7 @@ in
       gc-keep-derivations = true
       gc-keep-outputs = true
       auto-optimise-store = false
+      experimental-features = nix-command flakes ca-derivations
     '';
   };
 
