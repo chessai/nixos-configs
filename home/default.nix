@@ -2,24 +2,25 @@
 
 with {
   homeManager = builtins.fetchTarball {
-    url = "https://github.com/rycee/home-manager/archive/release-21.05.tar.gz";
+    url = "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
+    sha256 = "1c8gxm86zshr2zj9dvr02qs7y3m46gqavr6wyv01r09jfd99dxz9";
   };
 };
 
 {
   imports = [
     "${homeManager}/nixos"
-    ./alacritty
-    ./bash
+    #./alacritty
+    #./bash
     #./chromium
-    ./git
-    ./jq
-    ./man
-    ./mpv
-    ./nix-deploy
-    ./ssh
-    ./sway
-    ./vim
+    #./git
+    #./jq
+    #./man
+    #./mpv
+    #./nix-deploy
+    #./ssh
+    #./sway
+    #./vim
     # ./vscode
   ];
 
@@ -34,39 +35,22 @@ with {
     home = {
       packages = with pkgs; [
         arandr
-        bind
-        cabal-install
         cabal2nix
         file
         fd
         ghcid
         gist
-        haskell-language-server
-        haskellPackages.hasktags
         htop
-        nix-deploy
         nix-prefetch-git
-        obs-studio
         pavucontrol
-        remmina
         ripgrep
-        rnix-lsp
         silver-searcher
-        stylish-haskell
-        teamspeak_client
         tldr
         tree
         wget
-        wireshark-qt
         xfce.xfce4-screenshooter
         youtube-dl
-      ] ++ (with pkgs.nodePackages; [
-        typescript-language-server
-        vscode-html-languageserver-bin
-        vscode-css-languageserver-bin
-        bash-language-server
-        yaml-language-server
-      ]);
+      ];
 
       #sessionVariables = {
       #  GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
