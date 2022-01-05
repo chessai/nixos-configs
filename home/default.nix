@@ -1,15 +1,7 @@
 { config, pkgs, lib, ... }:
 
-with {
-  homeManager = builtins.fetchTarball {
-    url = "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
-    sha256 = "1c8gxm86zshr2zj9dvr02qs7y3m46gqavr6wyv01r09jfd99dxz9";
-  };
-};
-
 {
   imports = [
-    "${homeManager}/nixos"
     #./alacritty
     #./bash
     #./chromium
@@ -23,6 +15,11 @@ with {
     #./vim
     # ./vscode
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
 
   home-manager.users.chessai = {
     # home-manager needs a separate
@@ -57,6 +54,9 @@ with {
       #  LC_CTYPE = "en_US.UTF-8";
       #  EDITOR = "${pkgs.vim}/bin/vim";
       #};
+
+      # it tries to use <nixpkgs> if this is less than 20.09
+      stateVersion = "21.11";
     };
   };
 }
