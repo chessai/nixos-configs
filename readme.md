@@ -18,7 +18,3 @@ chessai's nixos configs
 * systemd/    : systemd configuration
 * time/       : system time/location
 * users/      : system users
-
-## building
-you need some secrets.nix files for the network stuff, after that you can just
-`nix-build`.

@@ -2,17 +2,17 @@
 
 {
   imports = [
-    #./alacritty
-    #./bash
-    #./chromium
-    #./git
-    #./jq
+    ./alacritty
+    ./bash
+    ./chromium
+    ./git
+    ./jq
     #./man
     #./mpv
     #./nix-deploy
-    #./ssh
+    ./ssh
     #./sway
-    #./vim
+    ./vim
     # ./vscode
   ];
 

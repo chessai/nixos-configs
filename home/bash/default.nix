@@ -23,10 +23,10 @@ with { cds = import ./cds.nix; };
       grep = "${pkgs.ripgrep}/bin/rg";
       rg = "${pkgs.ripgrep}/bin/rg";
 
-      git = "${pkgs.gitAndTools.hub}/bin/hub";
-      gs = "${pkgs.gitAndTools.hub}/bin/hub status";
-      gc = "${pkgs.gitAndTools.hub}/bin/hub clone";
-      git-initial-commit = "${pkgs.gitAndTools.hub}/bin/hub commit -m \"Creō ā nihilō\"";
+      git = "${pkgs.gitAndTools.gitFull}/bin/git";
+      gs = "${pkgs.gitAndTools.gitFull}/bin/git status";
+      gc = "${pkgs.gitAndTools.gitFull}/bin/git clone";
+      git-initial-commit = "${pkgs.gitAndTools.gitFull}/bin/git commit -m \"Creō ā nihilō\"";
 
       gist = "gist --private";
 
