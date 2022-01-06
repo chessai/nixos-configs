@@ -4,12 +4,7 @@
   environment.systemPackages = [ pkgs.tailscale ];
 
   networking = {
-    wireless = {
-      enable = true;
-      # empty set means "use /etc/wpa_supplicant.conf";
-      # which is set by sops
-      networks = { };
-    };
+    networkmanager.enable = true;
 
     firewall = {
       enable = true;
