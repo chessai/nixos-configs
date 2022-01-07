@@ -6,7 +6,7 @@
 
     settings = lib.mkOptionDefault {
       font = {
-        size = 22.0;
+        size = 11.0;
 
         normal = {
           family = "Fira Code Nerd Font";
