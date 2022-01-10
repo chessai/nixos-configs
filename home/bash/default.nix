@@ -37,6 +37,8 @@ with { cds = import ./cds.nix; };
 
       # install newest nightly rust
       rs-nightly-refresh = "nix-env -iA nixos.latest.rustChannels.nightly.rust";
+
+      i3-log = "DISPLAY=:0 ${pkgs.i3}/bin/i3-dump-log | ${pkgs.bzip2}/bin/bzip2 -c | ${pkgs.curl}/bin/curl --data-binary @- https://logs.i3wm.org";
     };
 
     # Only source this once.
