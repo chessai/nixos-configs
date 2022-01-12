@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   getFilesWith = pred: dir:
@@ -53,4 +53,8 @@ in
 
     overlays = builtins.map import (getFiles ./overlays);
   };
+
+  environment.systemPackages = [
+    pkgs.cachix
+  ];
 }

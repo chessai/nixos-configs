@@ -20,7 +20,7 @@
     ./hardware
     ./home
     ./networking
-    (import ./nix nixpkgs)
+    ./nix
     ./pavu
     ./scripts
     ./security
