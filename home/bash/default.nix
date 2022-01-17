@@ -14,7 +14,7 @@ with { cds = import ./cds.nix; };
     shellAliases = cds // {
       ghc88  = "nix-shell -p haskell.compiler.ghc884";
       ghc810 = "nix-shell -p haskell.compiler.ghc8107";
-      ghc9   = "nix-shell -p haskell.compiler.ghc901";
+      ghc9   = "nix-shell -p haskell.compiler.ghc902";
       ghc92  = "nix-shell -p haskell.compiler.ghc921";
 
       ls = "${pkgs.exa}/bin/exa -G --color auto --icons -a -s type";
