@@ -14,7 +14,7 @@ with { cds = import ./cds.nix; };
     shellAliases = cds // {
       ghc88  = "nix-shell -p haskell.compiler.ghc884";
       ghc810 = "nix-shell -p haskell.compiler.ghc8107";
-      ghc9   = "nix-shell -p haskell.compiler.ghc901";
+      ghc9   = "nix-shell -p haskell.compiler.ghc902";
       ghc92  = "nix-shell -p haskell.compiler.ghc921";
 
       ls = "${pkgs.exa}/bin/exa -G --color auto --icons -a -s type";
@@ -23,10 +23,10 @@ with { cds = import ./cds.nix; };
       grep = "${pkgs.ripgrep}/bin/rg";
       rg = "${pkgs.ripgrep}/bin/rg";
 
-      git = "${pkgs.gitAndTools.hub}/bin/hub";
-      gs = "${pkgs.gitAndTools.hub}/bin/hub status";
-      gc = "${pkgs.gitAndTools.hub}/bin/hub clone";
-      git-initial-commit = "${pkgs.gitAndTools.hub}/bin/hub commit -m \"Creō ā nihilō\"";
+      git = "${pkgs.gitAndTools.gitFull}/bin/git";
+      gs = "${pkgs.gitAndTools.gitFull}/bin/git status";
+      gc = "${pkgs.gitAndTools.gitFull}/bin/git clone";
+      git-initial-commit = "${pkgs.gitAndTools.gitFull}/bin/git commit -m \"Creō ā nihilō\"";
 
       gist = "gist --private";
 
@@ -37,6 +37,8 @@ with { cds = import ./cds.nix; };
 
       # install newest nightly rust
       rs-nightly-refresh = "nix-env -iA nixos.latest.rustChannels.nightly.rust";
+
+      i3-log = "DISPLAY=:0 ${pkgs.i3}/bin/i3-dump-log | ${pkgs.bzip2}/bin/bzip2 -c | ${pkgs.curl}/bin/curl --data-binary @- https://logs.i3wm.org";
     };
 
     # Only source this once.

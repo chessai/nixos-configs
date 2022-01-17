@@ -1,20 +1,14 @@
 { pkgs, ... }:
 
-let
-  secrets = import ./secrets.nix;
-in
 {
   environment.systemPackages = [ pkgs.tailscale ];
 
   networking = {
     wireless = {
       enable = true;
-      networks = {
-        inherit (secrets)
-          cwhome
-          "69420"
-          "1418";
-      };
+      # empty set means "use /etc/wpa_supplicant.conf";
+      # which is set by sops
+      networks = { };
     };
 
     firewall = {

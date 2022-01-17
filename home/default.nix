@@ -1,28 +1,25 @@
 { config, pkgs, lib, ... }:
 
-with {
-  homeManager = builtins.fetchTarball {
-    url = "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
-    sha256 = "1c8gxm86zshr2zj9dvr02qs7y3m46gqavr6wyv01r09jfd99dxz9";
-  };
-};
-
 {
   imports = [
-    "${homeManager}/nixos"
-    #./alacritty
-    #./bash
-    #./chromium
-    #./git
-    #./jq
+    ./alacritty
+    ./bash
+    ./chromium
+    ./git
+    ./jq
     #./man
     #./mpv
     #./nix-deploy
-    #./ssh
+    ./ssh
     #./sway
-    #./vim
+    ./vim
     # ./vscode
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+  };
 
   home-manager.users.chessai = {
     # home-manager needs a separate
@@ -36,6 +33,7 @@ with {
       packages = with pkgs; [
         arandr
         cabal2nix
+        cabal-install
         file
         fd
         ghcid
@@ -57,6 +55,9 @@ with {
       #  LC_CTYPE = "en_US.UTF-8";
       #  EDITOR = "${pkgs.vim}/bin/vim";
       #};
+
+      # it tries to use <nixpkgs> if this is less than 20.09
+      stateVersion = "21.11";
     };
   };
 }
