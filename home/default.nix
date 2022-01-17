@@ -33,6 +33,7 @@
       packages = with pkgs; [
         arandr
         cabal2nix
+        cabal-install
         file
         fd
         ghcid
