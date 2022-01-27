@@ -29,6 +29,7 @@ with { cds = import ./cds.nix; };
       git-initial-commit = "${pkgs.gitAndTools.gitFull}/bin/git commit -m \"Creō ā nihilō\"";
 
       gist = "gist --private";
+      gist-archive = "for repo in $(gist -l | awk '{ print $1 }'); do git clone $repo 2> /dev/null; done";
 
       yarn = "yarn --ignore-engines";
       ts = "nix-shell -E 'let pkgs = import <nixpkgs> {}; in pkgs.mkShell { buildInputs = with pkgs; [ nodejs-13_x yarn nodePackages.typescript ]; }'";
