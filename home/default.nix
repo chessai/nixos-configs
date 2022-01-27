@@ -39,6 +39,8 @@
         ghcid
         gist
         htop
+        monero
+        monero-gui
         nix-prefetch-git
         pavucontrol
         ripgrep
