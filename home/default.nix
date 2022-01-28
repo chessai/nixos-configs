@@ -49,7 +49,7 @@
         youtube-dl
       ];
 
-      # it tries to use <nixpkgs> if this is less than 20.09
+      # home-manager tries to use <nixpkgs> if this is less than 20.09
       stateVersion = "21.11";
     };
   };
