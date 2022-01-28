@@ -7,9 +7,6 @@
     ./chromium
     ./git
     ./jq
-    #./man
-    #./mpv
-    #./nix-deploy
     ./ssh
     #./sway
     ./vim
