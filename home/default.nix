@@ -52,12 +52,6 @@
         youtube-dl
       ];
 
-      #sessionVariables = {
-      #  GRAPHVIZ_DOT = "${pkgs.graphviz}/bin/dot";
-      #  LC_CTYPE = "en_US.UTF-8";
-      #  EDITOR = "${pkgs.vim}/bin/vim";
-      #};
-
       # it tries to use <nixpkgs> if this is less than 20.09
       stateVersion = "21.11";
     };
