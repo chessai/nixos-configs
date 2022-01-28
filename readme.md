@@ -2,7 +2,6 @@ chessai's nixos configs
 =======================
 
 ## layout
-* editors/    : editor configs
 * fonts/      : fonts available to the system
 * games/      : video games
 * home/       : home-manager configuration

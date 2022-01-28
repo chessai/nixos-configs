@@ -14,7 +14,6 @@
   imports = [
     hardwareConfig
 
-    ./editors
     ./fonts
     ./games
     ./hardware
