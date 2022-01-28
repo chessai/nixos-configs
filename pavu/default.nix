@@ -11,6 +11,12 @@
       enable = true;
 
       package = pkgs.bluezFull;
+
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
 
     pulseaudio = {
@@ -18,6 +24,15 @@
       enable = true;
 
       package = pkgs.pulseaudioFull;
+
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+
+      configFile = pkgs.writeText "default.pa" ''
+        load-module module-bluetooth-policy
+        load-module module-bluetooth-discover
+
+        load-module module-switch-on-connect
+      '';
     };
   };
 }

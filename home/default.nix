@@ -29,6 +29,7 @@
     home = {
       packages = with pkgs; [
         arandr
+        bluezFull
         cabal2nix
         cabal-install
         file
