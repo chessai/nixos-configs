@@ -27,12 +27,10 @@
 
       extraModules = [ pkgs.pulseaudio-modules-bt ];
 
-      configFile = pkgs.writeText "default.pa" ''
-        load-module module-bluetooth-policy
-        load-module module-bluetooth-discover
-
-        load-module module-switch-on-connect
-      '';
+      #configFile = pkgs.writeText "default.pa" ''
+      #  load-module module-bluetooth-policy
+      #  load-module module-bluetooth-discover
+      #'';
     };
   };
 }
