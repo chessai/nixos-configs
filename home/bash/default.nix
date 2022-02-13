@@ -30,6 +30,7 @@ with { cds = import ./cds.nix; };
 
       gist = "gist --private";
       gist-archive = "for repo in $(gist -l | awk '{ print $1 }'); do git clone $repo 2> /dev/null; done";
+      git-commit-stats = "git log --author=\"$(git config user.name)\" --pretty=tformat: --numstat | awk '{inserted+=$1; deleted+=$2; delta+=$1-$2; ratio=deleted/inserted} END {printf \"Commit stats:\\n- Lines added (total)....  %s\\n- Lines deleted (total)..  %s\\n- Total lines (delta)....  %s\\n- Add./Del. ratio (1:n)..  1 : %s\\n\", inserted, deleted, delta, ratio }' -";
 
       yarn = "yarn --ignore-engines";
       ts = "nix-shell -E 'let pkgs = import <nixpkgs> {}; in pkgs.mkShell { buildInputs = with pkgs; [ nodejs-13_x yarn nodePackages.typescript ]; }'";
