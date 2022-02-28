@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-with rec {
+with {
   extractScript = pkgs.writeShellScriptBin "extract" ''
     if [ -z "$1" ]; then
       echo "Usage: extract </path/to/file>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|sz|ex|tar.bz2|tar.gz|tar.xz>"
@@ -31,6 +31,10 @@ with rec {
     fi
   '';
 
+  gc = pkgs.writeShellScriptBin "gc" ''
+    ${pkgs.gitAndTools.gitFull}/bin/git clone git@github.com:$1/$2
+  '';
+
   gcChScript = pkgs.writeShellScriptBin "gc-ch" ''
     if [ -z "$1" ]; then
       echo "Usage: gc-ch <repo>"
@@ -55,9 +59,8 @@ with rec {
 };
 
 {
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep <pkg>
   environment.systemPackages = [
+    gc
     gcChScript
     extractScript
     cpdlScript
