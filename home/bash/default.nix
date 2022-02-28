@@ -25,7 +25,6 @@ with { cds = import ./cds.nix; };
 
       git = "${pkgs.gitAndTools.gitFull}/bin/git";
       gs = "${pkgs.gitAndTools.gitFull}/bin/git status";
-      gc = "${pkgs.gitAndTools.gitFull}/bin/git clone";
       git-initial-commit = "${pkgs.gitAndTools.gitFull}/bin/git commit -m \"Creō ā nihilō\"";
 
       gist = "gist --private";
