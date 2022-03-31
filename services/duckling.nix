@@ -1,6 +1,6 @@
 {
   services.duckling = {
-    enable = true;
+    enable = false;
     port = 5406; # random number
   };
 }
