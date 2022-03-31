@@ -6,8 +6,4 @@
 
     #package = pkgs.chromiumBeta;
   };
-
-  services.pipewire.enable = true;
-
-  xdg.portal.enable = true;
 }
