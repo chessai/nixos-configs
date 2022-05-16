@@ -67,7 +67,6 @@
       init.defaultBranch = "main";
 
       url."ssh://git@git.haskell.org/".pushInsteadOf = "git://git.haskell.org/";
-      #url."ssh://git@git.haskell.org/".pushInsteadOf = "https://gitlab.haskell.org/";
     };
   };
 }
