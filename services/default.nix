@@ -7,6 +7,7 @@
     ./duckling.nix
     ./hoogle.nix
     ./locate.nix
+    ./mysql.nix
     ./postgresql.nix
     ./sshd.nix
     ./tailscale.nix
