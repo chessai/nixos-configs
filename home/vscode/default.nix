@@ -7,22 +7,24 @@
     userSettings = {
       "editor.fontSize" = 24;
 
-      "[nix]"."editor.tabSize" = 2;
       "[hs]"."editor.tabSize" = 2;
+      "[nix]"."editor.tabSize" = 2;
+      "[rs]"."editor.tabSize" = 4;
 
-      "vim.easymotion" = true;
-      "vim.sneak" = true;
-      "vim.incsearch" = true;
-      "vim.useSystemClipboard" = true;
-      "vim.useCtrlKeys" = true;
-      "vim.hlsearch" = true;
+      # vscode-neovim needs to be told where neovim is
+      "vscode-neovim.neovimPath" = "${pkgs.neovim}/bin/nvim";
 
+      # not posix-compliant otherwise, and just downright annoying
       "files.insertFinalNewline" = true;
+
+      # vscode doesn't respect system keyboard by default
+      "keyboard.dispatch" = "keyCode";
     };
 
-    #extensions = with pkgs.vscode-extensions; [
-    #  bbenoist.Nix
-    #  #vscodevim.vim
-    #];
+    extensions = with pkgs.vscode-extensions; [
+      asvetliakov.vscode-neovim
+      matklad.rust-analyzer
+      arrterian.nix-env-selector
+    ];
   };
 }

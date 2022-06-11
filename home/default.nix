@@ -10,7 +10,7 @@
     ./ssh
     #./sway
     ./vim
-    # ./vscode
+    ./vscode
   ];
 
   home-manager = {
