@@ -6,6 +6,8 @@
 
     userSettings = {
       "editor.fontSize" = 24;
+      "editor.lineNumbers" = "relative";
+      "files.trimTrailingWhitespace" = true;
 
       "[hs]"."editor.tabSize" = 2;
       "[nix]"."editor.tabSize" = 2;
@@ -22,9 +24,9 @@
     };
 
     extensions = with pkgs.vscode-extensions; [
+      arrterian.nix-env-selector
       asvetliakov.vscode-neovim
       matklad.rust-analyzer
-      arrterian.nix-env-selector
     ];
   };
 }
