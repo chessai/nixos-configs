@@ -228,7 +228,7 @@ abbreviate x09 <C-r>='0123456789'<CR>
 iabbrev Despacito <Esc>:!xdg-open https://youtu.be/kJQP7kiw5Fk?t=83<CR>
 
 " Strip trailing whitespace for the certain filetypes
-autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal,*.nix %s/\s\+$//e
+autocmd BufWritePre *.hs,*.c,*.cpp,*.h,*.hpp,*.rs,*.cabal,*.nix,*.json,*.yml,*.yaml %s/\s\+$//e
 
 " Jump to identifiers/definitions with ctags
 " nnoremap goto :CtrlPTag<cr>
