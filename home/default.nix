@@ -5,6 +5,7 @@
     ./alacritty
     ./bash
     ./chromium
+    ./direnv
     ./git
     ./jq
     ./ssh

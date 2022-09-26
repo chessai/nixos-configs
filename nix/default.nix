@@ -34,9 +34,12 @@ in
       # "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c=" # clever
     ];
 
+    # todo are `gc-*` outdated?
     extraOptions = lib.mkOrder 1 ''
-      gc-keep-derivations = true
       gc-keep-outputs = true
+      keep-outputs = true
+      gc-keep-derivations = true
+      keep-derivations = true
       auto-optimise-store = false
       experimental-features = nix-command flakes ca-derivations
     '';
