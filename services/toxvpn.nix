@@ -1,5 +1,5 @@
 {
   services.toxvpn = {
-    enable = false; #true;
+    enable = false;
   };
 }
