@@ -37,6 +37,7 @@
       arrterian.nix-env-selector
       asvetliakov.vscode-neovim
       matklad.rust-analyzer
+      mkhl.direnv
     ];
   };
 }

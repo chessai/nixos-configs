@@ -10,7 +10,7 @@
     bluetooth = {
       enable = true;
 
-      package = pkgs.bluezFull;
+      #package = pkgs.bluezFull;
 
       settings = {
         General = {
@@ -25,7 +25,7 @@
 
       package = pkgs.pulseaudioFull;
 
-      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      #extraModules = [ pkgs.pulseaudio-modules-bt ];
 
       #configFile = pkgs.writeText "default.pa" ''
       #  load-module module-bluetooth-policy

@@ -11,28 +11,37 @@ let
   getFiles = getFilesWith (_: _: true);
 in
 {
+
+  system.stateVersion = "22.11";
+
   nix = {
     gc = {
       automatic = false;
     };
 
-    buildCores = 8;
 
-    trustedUsers = [
-      "chessai"
-      "root"
-    ];
+    settings = {
+      trusted-users = [
+        "chessai"
+        "root"
+      ];
 
-    binaryCaches = [
-      "http://cache.nixos.org" # nixos.org
-      # "http://cache.earthtools.ca" # clever
-      "https://hydra.iohk.io" "https://iohk.cachix.org" # IOHK
-    ];
+      cores = 8;
 
-    binaryCachePublicKeys = [
-      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=" # IOHK
-      # "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c=" # clever
-    ];
+      substituters = [
+        "http://cache.nixos.org" # nixos.org
+        # "http://cache.earthtools.ca" # clever
+        "https://iohk-nix-cache.s3-eu-central-1.amazonaws.com/" # IOHK. 301 redirect is messing with this somehow
+        # "https://hydra.iohk.io" "https://iohk.cachix.org" # IOHK
+        "https://nixcache.chainweb.com"
+      ];
+
+      trusted-public-keys = [
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=" # IOHK
+        # "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c=" # clever
+        "nixcache.chainweb.com:FVN503ABX9F8x8K0ptnc99XEz5SaA4Sks6kNcZn2pBY=" # Kadena
+      ];
+    };
 
     # todo are `gc-*` outdated?
     extraOptions = lib.mkOrder 1 ''
@@ -50,8 +59,7 @@ in
       allowUnfree = true;
       allowBroken = false;
       allowUnsupportedSystem = false;
-      permittedInsecurePackages = [
-      ];
+      permittedInsecurePackages = [];
     };
 
     overlays = builtins.map import (getFiles ./overlays);

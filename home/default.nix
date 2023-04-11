@@ -8,6 +8,7 @@
     ./direnv
     ./git
     ./jq
+    #./man
     ./ssh
     #./sway
     ./vim
@@ -27,10 +28,12 @@
       allowUnfree = true;
     };
 
+    # Fails to build and idc about it
+    manual.manpages.enable = false;
+
     home = {
       packages = with pkgs; [
         arandr
-        bluezFull
         cabal2nix
         cabal-install
         file
@@ -38,8 +41,8 @@
         ghcid
         gist
         htop
-        monero
-        monero-gui
+        #monero
+        #monero-gui
         nix-prefetch-git
         pavucontrol
         ripgrep
@@ -48,11 +51,12 @@
         tree
         wget
         xfce.xfce4-screenshooter
+        xxd
         youtube-dl
       ];
 
       # home-manager tries to use <nixpkgs> if this is less than 20.09
-      stateVersion = "21.11";
+      stateVersion = "22.11";
     };
   };
 }

@@ -16,14 +16,16 @@
     };
     ensureDatabases = [
       "holdings"
-      "holdings-development"
+      "holdings_development"
+      "holdings_test"
     ];
     ensureUsers = [
       {
         name = "chessai";
         ensurePermissions = {
           "DATABASE holdings" = "ALL PRIVILEGES";
-          "DATABASE \"holdings-development\"" = "ALL PRIVILEGES";
+          "DATABASE holdings_development" = "ALL PRIVILEGES";
+          "DATABASE holdings_test" = "ALL PRIVILEGES";
         };
       }
 
@@ -31,7 +33,8 @@
         name = "holdings";
         ensurePermissions = {
           "DATABASE holdings" = "ALL PRIVILEGES";
-          "DATABASE \"holdings-development\"" = "ALL PRIVILEGES";
+          "DATABASE holdings_development" = "ALL PRIVILEGES";
+          "DATABASE holdings_test" = "ALL PRIVILEGES";
         };
       }
     ];
