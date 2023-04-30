@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./wireguard.nix
+  ];
+
   environment.systemPackages = [ pkgs.tailscale ];
 
   networking = {

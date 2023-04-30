@@ -1,7 +1,7 @@
 {
   services.redis.servers = {
     cacl = {
-      enable = true;
+      enable = false;
       port = 6379;
     };
   };

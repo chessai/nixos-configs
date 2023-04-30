@@ -29,17 +29,31 @@ in
       cores = 8;
 
       substituters = [
-        "http://cache.nixos.org" # nixos.org
-        # "http://cache.earthtools.ca" # clever
-        "https://iohk-nix-cache.s3-eu-central-1.amazonaws.com/" # IOHK. 301 redirect is messing with this somehow
-        # "https://hydra.iohk.io" "https://iohk.cachix.org" # IOHK
+        # NixOS.org
+        "http://cache.nixos.org"
+
+        # clever
+        # "http://cache.earthtools.ca"
+
+        # IOG
+        # /Note/: aws url is there because their 301 redirect broke once.
+        "https://cache.iog.io"
+        "https://iohk-nix-cache.s3-eu-central-1.amazonaws.com/"
+        # Old ones: "https://hydra.iohk.io" "https://iohk.cachix.org" # IOHK
+
+        # Kadena
         "https://nixcache.chainweb.com"
       ];
 
       trusted-public-keys = [
-        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo=" # IOHK
-        # "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c=" # clever
-        "nixcache.chainweb.com:FVN503ABX9F8x8K0ptnc99XEz5SaA4Sks6kNcZn2pBY=" # Kadena
+        # IOHK
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ=" "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
+
+        # clever
+        # "c2d.localnet-1:YTVKcy9ZO3tqPNxRqeYEYxSpUH5C8ykZ9ImUKuugf4c="
+
+        # Kadena
+        "nixcache.chainweb.com:FVN503ABX9F8x8K0ptnc99XEz5SaA4Sks6kNcZn2pBY="
       ];
     };
 

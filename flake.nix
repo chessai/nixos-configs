@@ -11,6 +11,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #chainweb = {
+    #  url = "github:kadena-io/chainweb-node-nixos-module";
+    #};
   };
 
   outputs =
@@ -18,7 +21,8 @@
     , nixpkgs
     , sops-nix
     , home-manager
-    , ... 
+    #, chainweb
+    , ...
     }@inputs:
     let
       lib = nixpkgs.lib;
@@ -29,15 +33,17 @@
       nixosConfigurations = {
         kudu = lib.nixosSystem {
           inherit system;
-          modules = 
+          modules =
             let
               mainModule = import ./configuration-kudu.nix inputs;
               sopsModule = sops-nix.nixosModules.sops;
               hmModule = home-manager.nixosModules.home-manager;
+              #chainwebModule = chainweb.nixosModules.chainweb-node;
             in [
               mainModule
               sopsModule
               hmModule
+              #chainwebModule
             ];
          };
       };
@@ -52,6 +58,6 @@
         sopsPGPKeyDirs = [
           "./pubkeys"
         ];
-      }; 
+      };
     };
 }

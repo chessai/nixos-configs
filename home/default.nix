@@ -41,15 +41,18 @@
         ghcid
         gist
         htop
+        mosh
         #monero
         #monero-gui
         nix-prefetch-git
         pavucontrol
         ripgrep
         silver-searcher
+        tcpdump
         tldr
         tree
         wget
+        wireguard-tools
         xfce.xfce4-screenshooter
         xxd
         youtube-dl
